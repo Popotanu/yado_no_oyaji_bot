@@ -55,3 +55,4 @@ build-iPhoneSimulator/
 *.un~
 *swp
 .env
+.DS_Store

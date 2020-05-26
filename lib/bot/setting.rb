@@ -4,7 +4,7 @@ module YadoNoOyajiBot
   class Settings
     YAML_PATH = "#{Dir.pwd}/config/settings.yml"
     def initialize
-      @settings = YAML.load(ERB.new(File.read(YAML_PATH)).result)
+      @settings = YAML.safe_load(ERB.new(File.read(YAML_PATH)).result)
       define_readers
     end
 
@@ -12,10 +12,7 @@ module YadoNoOyajiBot
 
     def define_readers
       @settings.keys.each do |key|
-        next if defined? key
-        define_method(key) do
-          @settings[key]
-        end
+        self.class.send(:define_method, key) { @settings[key] }
       end
     end
   end
