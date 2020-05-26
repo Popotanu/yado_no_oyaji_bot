@@ -32,6 +32,9 @@ module YadoNoOyajiBot
 
   LOGGER.info "oyaji: おはよう、やっと起きてきたか"
   LOGGER.info "Ctrl+C to stop the oyaji"
+   bot.message(content: 'こんにちは') do |e|
+   e.respond('nemui')
+  end
 
   BOT.run(:async)
 end
