@@ -54,3 +54,4 @@ build-iPhoneSimulator/
 /.idea
 *.un~
 *swp
+.env
