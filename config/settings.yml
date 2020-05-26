@@ -1,0 +1,4 @@
+---
+client_id: <%= ENV['CLIENT_ID'] %>
+token: <%= ENV['TOKEN'] %>
+
