@@ -1,1 +1,3 @@
-web: bundle exec ruby run.rb
+web: echo 'hello'
+worker: bundle exec ruby run.rb
+
