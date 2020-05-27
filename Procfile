@@ -1,3 +1,2 @@
-web: echo 'hello'
-worker: bundle exec ruby run.rb
+worker: chmod +x ./run.sh && ./run.sh
 
