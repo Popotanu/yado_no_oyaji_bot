@@ -35,8 +35,8 @@ module YadoNoOyajiBot
     e.respond('こんばんは' + e.user.name)
   end
 
-  BOT.command :user do |event|
-    event.user.name
+  BOT.command :hello do |event|
+    "おはよう。#{event.user.name}。"
   end
 
   BOT.run
