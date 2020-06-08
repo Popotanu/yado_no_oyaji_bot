@@ -19,11 +19,10 @@ module YadoNoOyajiBot
 
   Dir["#{__dir__}/bot/*.rb"].each { |f| require f }
 
-  COMMAND_PREFIX = '!'
   BOT = Discordrb::Commands::CommandBot.new(
     token: SETTINGS.token,
     client_id: SETTINGS.client_id,
-    prefix: COMMAND_PREFIX
+    prefix: SETTINGS.command_prefix
   )
 
   Commands.include_all!

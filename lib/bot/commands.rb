@@ -1,11 +1,11 @@
 module YadoNoOyajiBot
   module Commands
-    Dir["#{__dir__}/bot/*.rb"].each { |f| require f }
+    Dir["#{__dir__}/commands/*.rb"].each { |f| require f }
 
-    @commands = []
-    
+    @commands = [Dice]
+
     def self.include_all!
-      @commands.each { |command| YadoNoOyajiBot::BOT.include!(command) }
+      @commands.each { |mod| YadoNoOyajiBot::BOT.include!(mod) }
     end
   end
 end
