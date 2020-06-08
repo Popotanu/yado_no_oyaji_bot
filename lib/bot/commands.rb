@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module YadoNoOyajiBot
   module Commands
-    Dir["#{__dir__}/commands/*.rb"].each { |f| require f }
+    Dir["#{__dir__}/commands/*.rb"].sort.each { |f| require f }
 
     @commands = [Dice]
 

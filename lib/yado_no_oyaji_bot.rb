@@ -10,14 +10,13 @@ require 'yaml'
 require 'erb'
 require 'open-uri'
 
-
 module YadoNoOyajiBot
   LOGGER = Discordrb::Logger.new(nil, [STDOUT])
 
   require_relative 'bot/setting'
   SETTINGS = Settings.new
 
-  Dir["#{__dir__}/bot/*.rb"].each { |f| require f }
+  Dir["#{__dir__}/bot/*.rb"].sort.each { |f| require f }
 
   BOT = Discordrb::Commands::CommandBot.new(
     token: SETTINGS.token,
@@ -27,8 +26,8 @@ module YadoNoOyajiBot
 
   Commands.include_all!
 
-  LOGGER.info "oyaji: おはよう、やっと起きてきたか"
-  LOGGER.info "Ctrl+C to stop the oyaji"
+  LOGGER.info 'oyaji: おはよう、やっと起きてきたか'
+  LOGGER.info 'Ctrl+C to stop the oyaji'
 
   BOT.message(content: 'おはよう') do |e|
     e.respond('おはよう' + e.user.name)
@@ -40,6 +39,3 @@ module YadoNoOyajiBot
 
   BOT.run
 end
-
-
-
