@@ -30,7 +30,7 @@ module YadoNoOyajiBot
   LOGGER.info 'Ctrl+C to stop the oyaji'
 
   BOT.message(content: 'おはよう') do |e|
-    e.respond('おはよう' + e.user.name)
+    e.respond('おはよう。' + e.user.name + '。')
   end
 
   BOT.command(:hello, usage: 'tanu') do |event|
